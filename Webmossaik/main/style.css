@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900,');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/*! colors */
+:root {
+    --background: #222327;
+    --lightOne: #919191;
+    --softwhite: #f1f8fc;
+    --darkOne: #312f3a;
+    --darkTwo: #45424b;
+    --lightOne: #919191;
+    --lightTwo: #aaa;
+    --button: #9a8174;
+}
+
+body {
+
+    min-height: 100vh;
+    background: var(--background);
+}
+
+/*! phone  */
+@media only screen and (max-width: 767px) {
+
+    .logo,
+    .mosaikk_text {
+        display: none;
+    }
+
+    .circle {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        background: var(--button);
+        border-radius: 50%;
+        border: 6px solid var(--background);
+        transition: 0.5s;
+        top: -2rem;
+        left: 7%;
+    }
+
+    .navigation {
+        width: 100%;
+        height: 4rem;
+        background: var(--softwhite);
+        position: fixed;
+        bottom: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+
+    .navigation ul {
+        display: flex;
+        justify-content: space-around;
+        width: 21rem;
+    }
+
+    .navigation ul li {
+        position: relative;
+        list-style: none;
+        width: 70px;
+        height: 70px;
+        z-index: 1;
+    }
+
+    .navigation ul li a {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .navigation ul li a .icon {
+        position: relative;
+        display: block;
+        line-height: 75px;
+        font-size: 1.5em;
+        text-align: center;
+        transition: 0.5s;
+        color: var(--background);
+    }
+
+    .navigation ul li.active a .icon {
+        transform: translateY(-25px);
+    }
+
+    .navigation ul li a .text {
+        position: absolute;
+        color: var(--background);
+        font-weight: 400;
+        font-size: 0.75em;
+        letter-spacing: 0.05em;
+        transition: .5s;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    .navigation ul li.active a .text {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+}
+
+/*! tablet */
+@media only screen and (max-width: 1023px) and (min-width:767px) {
+
+    .circle {
+        display: none;
+    }
+
+    .mosaikk_text {
+        display: none;
+    }
+
+    .header {
+        position: sticky;
+        top: 1px;
+        z-index: 70;
+    }
+
+    .navigation .icon {
+        display: none;
+    }
+
+    .navigation {
+        top: 2rem;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: center;
+    }
+
+    .navigation ul {
+        align-items: center;
+        list-style: none;
+        position: relative;
+        top: .6rem;
+        z-index: 1;
+    }
+
+    .navigation ul li a {
+        list-style-type: none;
+        text-decoration: none;
+    }
+
+    .logo {
+        position: relative;
+        width: 3rem;
+    }
+
+    .navigation ul li .text {
+        color: var(--lightOne);
+        transition: .5s;
+    }
+
+    .navigation ul li .text:hover {
+        color: var(--lightTwo);
+    }
+
+}
+
+/*! computer */
+@media only screen and (min-width:1023px) {
+
+    .circle {
+        display: none;
+    }
+
+    .header {
+        position: sticky;
+        top: 1px;
+        z-index: 70;
+    }
+
+    .navigation .logo_text {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .logo {
+        position: relative;
+        width: 4rem;
+    }
+
+    .mosaikk_text {
+        position: relative;
+        top: 1.2rem;
+        left: 1rem;
+        width: 7rem;
+        height: 1.5rem;
+    }
+
+    .navigation .icon {
+        display: none;
+    }
+
+    .navigation {
+        top: 2rem;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: center;
+    }
+
+    .navigation ul {
+        align-items: center;
+        list-style: none;
+        position: relative;
+        top: 1rem;
+        z-index: 1;
+    }
+
+    .navigation ul li a {
+        list-style-type: none;
+        text-decoration: none;
+    }
+
+
+    .navigation ul li .text {
+        color: var(--lightOne);
+        transition: .5s;
+    }
+
+    .line {
+        width: 4rem;
+        height: .2rem;
+        color: var(--lightTwo);
+    }
+
+    .navigation ul li .text:hover {
+        color: var(--lightTwo);
+        border-bottom: 2px solid var(--lightTwo);
+    }
+
+}
+
+/* .indicator{
+    position: absolute;
+    left: 0px;
+    top: -50%;
+    width: 70px;
+    height: 70px;
+    background: #29fd53;
+    border-radius: 50%;
+    border: 6px solid var(--clr);
+    transition: 0.5s;
+}
+
+.indicator::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 0px -10px 0 0 var(--clr);
+}
+
+.indicator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: 0px -10px 0 0 var(--clr);
+} */
+
+/* 
+.navigation ul li:nth-child(1).active ~ .indicator{
+    transform: translateX(calc(70px * 0));
+}
+.navigation ul li:nth-child(2).active ~ .indicator{
+    transform: translateX(calc(70px * 1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator{
+    transform: translateX(calc(70px * 2));
+}
+.navigation ul li:nth-child(4).active ~ .indicator{
+    transform: translateX(calc(70px * 3));
+}
+.navigation ul li:nth-child(5).active ~ .indicator{
+    transform: translateX(calc(70px * 4));
+} */
